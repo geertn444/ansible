@@ -459,10 +459,10 @@ def main():
                 module.fail_json(msg='You are trying to configure a VLAN'
                                  ' on an interface that\ndoes not exist on the '
                                  ' switch yet!', vlan=access_vlan)
-            elif native_vlan and native_vlan not in current_vlans:
-                module.fail_json(msg='You are trying to configure a VLAN'
-                                 ' on an interface that\ndoes not exist on the '
-                                 ' switch yet!', vlan=native_vlan)
+          #  elif native_vlan and native_vlan not in current_vlans:
+          #      module.fail_json(msg='You are trying to configure a VLAN'
+          #                       ' on an interface that\ndoes not exist on the '
+          #                       ' switch yet!', vlan=native_vlan)
             else:
                 command = get_switchport_config_commands(name, existing, proposed, module)
                 commands.append(command)
