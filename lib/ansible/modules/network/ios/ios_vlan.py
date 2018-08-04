@@ -231,7 +231,7 @@ def parse_to_logical_rows(out):
 
 
 def map_ports_str_to_list(ports_str):
-    return list(filter(bool, (p.strip().replace('Gi', 'GigabitEthernet') for p in ports_str.split(', '))))
+    return list(filter(bool, (p.strip().replace('Gi', 'GigabitEthernet').replace('Te','TenGigabitEthernet').replace('Fa','FastEthernet').replace('Fo','FortyGigabitEthernet') for p in ports_str.split(', '))))
 
 
 def parse_to_obj(logical_rows):
